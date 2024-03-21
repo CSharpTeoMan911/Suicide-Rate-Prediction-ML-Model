@@ -84,7 +84,7 @@ The dataset that was cleaned and manipulated previously is visualised. Due to th
 
 ### Implementation of the Multivariate Linear Regression
 
-![Machine learning training](https://github.com/CSharpTeoMan911/Suicide-Rate-Prediction-ML-Model/assets/87245086/30b9b287-3cb4-4a96-88ba-1bf8b0e3b771)
+![Machine learning training](https://github.com/CSharpTeoMan911/Suicide-Rate-Prediction-ML-Model/assets/87245086/11bc39f5-1305-485a-8582-8005dd26c0d1)
 
 Because the machine learning model's puprose is to predict the suicide rate of individuals using the gender and age values in relation with the country where they are located, all the unique country values from the dataset are extracted. 
 
@@ -94,17 +94,17 @@ Because the machine learning model's puprose is to predict the suicide rate of i
 
 Afterwards, the dictionary that will hold the values regarding the **&#x2205;&#x2080;**, **&#x2205;&#x2081;**, **&#x2205;&#x2082;**, **&#x2205;&#x2083;**, and **r&#x2082;** values, is created.
 
-![Dictionary creation](https://github.com/CSharpTeoMan911/Suicide-Rate-Prediction-ML-Model/assets/87245086/78ef496a-274a-4168-9110-c795745e88a8)
+![Dictionary creation](https://github.com/CSharpTeoMan911/Suicide-Rate-Prediction-ML-Model/assets/87245086/45c648a2-79d0-4333-afb6-5346adf670d4)
 
 <br>
 
 In order to train the model in accordance with the data of each country, a loop will iterate, train the model with data of each country, and save the values in the aformentioned dictionary.  
 
-![Country data iteration](https://github.com/CSharpTeoMan911/Suicide-Rate-Prediction-ML-Model/assets/87245086/a35add9c-4d30-4e01-81b6-2abaf60bda3f)
+![Country data iteration](https://github.com/CSharpTeoMan911/Suicide-Rate-Prediction-ML-Model/assets/87245086/7584ec39-daa5-4984-be3f-2b6aa0a38e75)
 
 After the trainig data is created, the data is cleaned and manipulated. The rows that have an **r&#x2082;** value bellow 50%, and the rows that have **&#x2205;&#x2081;**, **&#x2205;&#x2082;**, and **&#x2205;&#x2083;** values equal to 0 are removed. The removal of rows that have **&#x2205;&#x2081;**, **&#x2205;&#x2082;**, and **&#x2205;&#x2083;** values equal to 0 is done to prevent bias in the data, becuase no country in the world has a suicide rate equal to 0. The removal of rows that have an **r&#x2082;** value bellow 50% is done to remove rows that do not allow the model to have an accuracy greater than 50%.
 
-![Training data wrangling](https://github.com/CSharpTeoMan911/Suicide-Rate-Prediction-ML-Model/assets/87245086/4b121823-d832-4562-bf29-7bb902e1c1d8)
+![Training data wrangling](https://github.com/CSharpTeoMan911/Suicide-Rate-Prediction-ML-Model/assets/87245086/2f87b64f-858b-42de-90cc-ef1ccc2e34bd)
 
 <br>
 <br>
