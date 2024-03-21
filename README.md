@@ -24,5 +24,10 @@
 <br>
 
 The dataset used was sourced from **Kaggle**. The creator of this dataset used data provided by trusted sources.
+The dataset can be downloaded at this [link](https://www.kaggle.com/datasets/russellyates88/suicide-rates-overview-1985-to-2016). Alternatively, you can download the sourcecode and the dataset in the repository's **Releases** section. 
 
+<br>
+
+![Eva_Capture2020009149](https://github.com/CSharpTeoMan911/Suicide-Rate-Prediction-ML-Model/assets/87245086/04be33b0-7d07-4ead-8921-e8ba3a2cabd1)
+![Eva_Capture1124962871](https://github.com/CSharpTeoMan911/Suicide-Rate-Prediction-ML-Model/assets/87245086/bbc59ea2-100a-403b-9f49-2b57f9b61e42)
 
