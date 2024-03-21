@@ -47,8 +47,7 @@ The purpose of this machine learning model is to predict the suicide rate per 10
 
 The dataset has multiple problematic data types from the from the perspective of a **Multivariate Linear Regression Model**. The aforementioned fact is caused by the fact that in the **Multivariate Linear Regression**, the formula used to calculate the predicted **Y** values based on the provided **X** values is:&nbsp; **&#x0176; = &#x2205;&#x2080; + &#x2205;&#x2081;X&#x2081; + &#x2205;&#x2081;X&#x2082; . . . + &#x2205;&#x2093;X&#x2093;**. As a result, the **X** values must be numeric values in order to calculate the previously shown formula and the **&#x0176;** values themselves, and as it can be seen in the picture that shows the values in the dataset, the **sex** and **age** columns have non-numerical values. This values are critical to this machine learning model, because these values will be used to predict the suicide rate for people based on their sex and age in relation with their country they are living into. In order to be able to calculate the **&#x2205;** values and the **&#x0176;** values, we must represent these **X** values as numerical values.
 
-![Data Wrangling](https://github.com/CSharpTeoMan911/Suicide-Rate-Prediction-ML-Model/assets/87245086/d0fe3a4e-09ab-4896-8662-c83f9cacbd8e)
-
+![Data Wrangling](https://github.com/CSharpTeoMan911/Suicide-Rate-Prediction-ML-Model/assets/87245086/06c443a1-441e-4e08-a545-bbbb672b5f6c)
 
 <br>
 
@@ -63,18 +62,49 @@ To transform the age range classifications into numerical values that retain the
 
 To transform the sex classifications into numerical values that retain their meaning and also allow the ∅ values to be calculated, the sex values **male** and **female** will be replaced with **1** and **2** respectively and they will be assigned in a different column for each individual row **( e.g. male --> 1 & female --> 2 )**.
 
-![Data cleaning](https://github.com/CSharpTeoMan911/Suicide-Rate-Prediction-ML-Model/assets/87245086/83f704b9-52e8-4e46-942a-ebccb68100ad)
+![Data cleaning](https://github.com/CSharpTeoMan911/Suicide-Rate-Prediction-ML-Model/assets/87245086/68bcc433-9b8c-4b0f-aef2-a825099f6147)
 
 After all the non-numeric classifications were replaced with numerical equivalents, the columns that contain data that is not relevant to the machine learning model are removed.  
+
+![Normalise data](https://github.com/CSharpTeoMan911/Suicide-Rate-Prediction-ML-Model/assets/87245086/c542e17d-1e95-4b37-b612-9c05790a797c)
+
+Afterwards the data in the column that contains values about the suicide rate is normalised to remove the bias in the data.
 
 <br>
 <br>
 
 ### Data Visualisation
 
-![Data visualisation](https://github.com/CSharpTeoMan911/Suicide-Rate-Prediction-ML-Model/assets/87245086/8ba05ab9-8572-48fb-a4d9-b992cbedd96a)
+![Data visualisation](https://github.com/CSharpTeoMan911/Suicide-Rate-Prediction-ML-Model/assets/87245086/fe2047b4-070f-40ef-9f62-1183906aac8a)
 
 The dataset that was cleaned and manipulated previously is visualised. Due to the fact that each country has its own socio-economic factors, the machine learning model will be trained to detect the suicide rate based on gender and age only in relation with the location of the individuals in order to maximise the model's accuracy. To see how fit a **Multivariate Linear Regression** algorithm is for this task, all the sex and age values that are within UK were took to be plotted against the suicide rate  using scatterplot. This was done to visualise the spread of the data, if the data its condenssed, the **Multivariate Linear Regression** accuracy is lowered, otherwise the **Multivariate Linear Regression** accuracy is increased. As it can be seen, the data is distributed pretty well, so the **Multivariate Linear Regression** algorithm will have a decent degree of accuracy.
+
+<br>
+<br>
+
+### Implementation of the Multivariate Linear Regression
+
+![Machine learning training](https://github.com/CSharpTeoMan911/Suicide-Rate-Prediction-ML-Model/assets/87245086/11bc39f5-1305-485a-8582-8005dd26c0d1)
+
+Because the machine learning model's puprose is to predict the suicide rate of individuals using the gender and age values in relation with the country where they are located, all the unique country values from the dataset are extracted. 
+
+![Machine Learning Init](https://github.com/CSharpTeoMan911/Suicide-Rate-Prediction-ML-Model/assets/87245086/00291480-5395-4f70-b77f-f05fa22ff8ca)
+
+<br>
+
+Afterwards, the dictionary that will hold the values regarding the **&#x2205;&#x2080;**, **&#x2205;&#x2081;**, **&#x2205;&#x2082;**, **&#x2205;&#x2083;**, and **r&#x2082;** values, is created.
+
+![Dictionary creation](https://github.com/CSharpTeoMan911/Suicide-Rate-Prediction-ML-Model/assets/87245086/45c648a2-79d0-4333-afb6-5346adf670d4)
+
+<br>
+
+In order to train the model in accordance with the data of each country, a loop will iterate, train the model with data of each country, and save the values in the aformentioned dictionary.  
+
+![Country data iteration](https://github.com/CSharpTeoMan911/Suicide-Rate-Prediction-ML-Model/assets/87245086/7584ec39-daa5-4984-be3f-2b6aa0a38e75)
+
+After the trainig data is created, the data is cleaned and manipulated. The rows that have an **r&#x2082;** value bellow 50%, and the rows that have **&#x2205;&#x2081;**, **&#x2205;&#x2082;**, and **&#x2205;&#x2083;** values equal to 0 are removed. The removal of rows that have **&#x2205;&#x2081;**, **&#x2205;&#x2082;**, and **&#x2205;&#x2083;** values equal to 0 is done to prevent bias in the data, becuase no country in the world has a suicide rate equal to 0. The removal of rows that have an **r&#x2082;** value bellow 50% is done to remove rows that do not allow the model to have an accuracy greater than 50%.
+
+![Training data wrangling](https://github.com/CSharpTeoMan911/Suicide-Rate-Prediction-ML-Model/assets/87245086/2f87b64f-858b-42de-90cc-ef1ccc2e34bd)
 
 <br>
 <br>
