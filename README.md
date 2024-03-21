@@ -44,7 +44,8 @@ The purpose of this machine learning model is to predict the suicide rate per 10
 ![Dataset with problematic value types](https://github.com/CSharpTeoMan911/Suicide-Rate-Prediction-ML-Model/assets/87245086/8235075d-abfb-45d1-ae70-5b63a78ba1c1)
 
 <br>
-<br>
+
+The dataset has multiple problematic data types from the from the perspective of a **Multivariate Linear Regression Model**. 
 
 
 
